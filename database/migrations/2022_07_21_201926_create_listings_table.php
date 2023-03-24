@@ -13,19 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        // Schema::create('listings', function (Blueprint $table) {
-        //     $table->id();
-        //     $table->string('title');
-        //     $table->string('logo')->nullable();
-        //     $table->string('tags');
-        //     $table->string('location');
-        //     $table->string('company');
-        //     $table->string('email');
-        //     $table->string('website');
-        //     $table->longText('description');
-        //     $table->timestamps();
+        Schema::create('listings', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->string('user_id')->nullable();
+            $table->string('logo')->nullable();
+            $table->string('tags');
+            $table->string('location');
+            $table->string('company');
+            $table->string('email');
+            $table->string('website');
+            $table->longText('description');
+            $table->timestamps();
             
-        // });
+        });
     }
 
     /**

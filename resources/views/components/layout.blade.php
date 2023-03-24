@@ -29,7 +29,7 @@
     </head>
     <body class="mb-48">
         <nav class="flex justify-between items-center mb-4">
-            <a href="/listings"
+            <a href="/"
                 ><img class="w-24" src="{{asset('images/logo.png')}}" alt="" class="logo"
             /></a>
             <ul class="flex space-x-6 mr-6 text-lg">
@@ -41,7 +41,7 @@
                    
                 </li>
                 <li>
-                    <a href="/listings" class="hover:text-laravel"
+                    <a href="/listings/manage" class="hover:text-laravel"
                         ><i class="fa-solid fa-gear"></i>
                         Manage Listing</a
                     >
@@ -56,7 +56,7 @@
                 </li>
                 @else
                 <li>
-                    <a href="users/register" class="hover:text-laravel"
+                    <a href="/users/register" class="hover:text-laravel"
                         ><i class="fa-solid fa-user-plus"></i> Register</a
                     >
                 </li>

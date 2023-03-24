@@ -25,14 +25,14 @@ class UserController extends Controller
 
         $user = User::create($formData);
         Auth::login($user);
-        return redirect('/listings')->with('message', 'User created and logged in');
+        return redirect('/')->with('message', 'User created and logged in');
             
     }
     public function logout(Request $request){
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/listings')->with('message', 'User logged out succesfully');
+        return redirect('/')->with('message', 'User logged out succesfully');
     }
     public function login (){
         return view('users.login');
@@ -44,7 +44,7 @@ class UserController extends Controller
         ]);
         if(auth()->attempt($formData)){
             $request->session()->regenerate();
-            return redirect('/listings')->with('message', 'User logged in succesfully');
+            return redirect('/')->with('message', 'User logged in succesfully');
 
         }else{
             return back()->withErrors(['email' => 'Invalid credentials'])->onlyInput('email');
