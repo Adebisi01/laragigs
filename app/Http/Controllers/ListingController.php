@@ -42,7 +42,7 @@ class ListingController extends Controller
 
         // dd($formFields);
          Listing::create($formFields);
-         return redirect('/')->with('message', 'Listing created succesfully');
+         return redirect('/', 201)->with('message', 'Listing created succesfully');
     }
 
     public function edit(Listing $listing){
@@ -70,7 +70,8 @@ class ListingController extends Controller
    return back()->with('message', 'Listing updated succefully');
 }
 public function destroy(Listing $listing){
-    if($listing->id != auth()->id()){
+    if($listing->user_id != auth()->id()){
+        // dd($listing->id , auth()->id());
         abort(403, 'Unauthorized Action');
     }
 

@@ -32,7 +32,6 @@ Route::get('/listings/create', [ListingController::class, 'create'])->middleware
 Route::post('/listings', [ListingController::class, 'store'])->middleware('auth');
 Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
 
-Route::get('/listings/{listing}', [ListingController::class, 'show']);
 Route::get('/listings/{listing}/edit', [ListingController::class, 'edit'])->middleware('auth');
 Route::put('/listings/{listing}', [ListingController::class, 'update'])->middleware('auth');
 Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
