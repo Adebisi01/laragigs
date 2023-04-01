@@ -40,7 +40,6 @@ class ListingController extends Controller
         }
         $formFields['user_id'] = auth()->id();
 
-        // dd($formFields);
          Listing::create($formFields);
          return redirect('/', 201)->with('message', 'Listing created succesfully');
     }
@@ -71,7 +70,7 @@ class ListingController extends Controller
 }
 public function destroy(Listing $listing){
     if($listing->user_id != auth()->id()){
-        // dd($listing->id , auth()->id());
+
         abort(403, 'Unauthorized Action');
     }
 
