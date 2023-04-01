@@ -15,9 +15,9 @@ use App\Http\Controllers\ListingController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // All users
 Route::get('/users/register', [UserController::class, 'create'])->middleware('guest');
